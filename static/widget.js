@@ -172,19 +172,21 @@
   function init() {
     if (alwaysShow || !getCookie(closedCookie)) {
       var left, right;
+      var offset = '20px';
 
       if (position === 'left') {
-        left = '0';
+        left = offset;
         right = 'auto';
       }
       else {
+        position = 'right';
         left = 'auto';
-        right = '0';
+        right = offset;
       }
 
       injectCSS('RED_ALERT_CSS',
-        '#' + domId + ' { position: fixed; right: ' + right + '; left: ' + left + '; bottom: 0px; width: 450px; height: 350px; z-index: 20000; -webkit-overflow-scrolling: touch; overflow: hidden; transition: width ' + animationDuration + 'ms ease-in, height ' + animationDuration + 'ms ease-in; } ' +
-        '#' + domId + '.RAW--maximized { width: 100%; height: 100%; } ' +
+        '#' + domId + ' { position: fixed; right: ' + right + '; left: ' + left + '; bottom: ' + offset + '; width: 400px; height: 250px; z-index: 20000; -webkit-overflow-scrolling: touch; overflow: hidden; transition: all ' + animationDuration + 'ms ease-in; border-radius: 10px; } ' +
+        '#' + domId + '.RAW--maximized { width: 100%; height: 100%; bottom: 0; ' + position + ': 0; border-radius: 0; } ' +
         '#' + domId + '.RAW--closing { transform: scale(0); transform-origin: bottom right; opacity: 0; transition: transform ' + animationDuration + 'ms ease-in, opacity ' + animationDuration + 'ms ease-in; } ' +
         '#' + domId + ' iframe { width: 100%; height: 100%; }'
       );
