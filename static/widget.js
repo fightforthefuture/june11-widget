@@ -1,18 +1,18 @@
 (function() {
   'use strict';
 
-  var domId = 'RED_ALERT_WIDGET';
+  var domId = 'BFTN_WIDGET';
   var animationDuration = 200;
-  var closedCookie = '_RED_ALERT_WIDGET_CLOSED_';
+  var closedCookie = '_BFTN_WIDGET_CLOSED_';
 
   // user-configurable options
-  var opts = window.RED_ALERT_OPTIONS || {};
+  var opts = window.BFTN_WIDGET_OPTIONS || {};
   var org = opts.org || null;
   var cookieExpirationDays = parseFloat(opts.cookieExpirationDays || 1);
-  var alwaysShow = !!(opts.alwaysShow || window.location.hash.indexOf('ALWAYS_SHOW_RED_ALERT') !== -1);
+  var alwaysShow = !!(opts.alwaysShow || window.location.hash.indexOf('ALWAYS_SHOW_WIDGET') !== -1);
   var disableGoogleAnalytics = !!opts.disableGoogleAnalytics;
   var disableDonations = !!opts.disableDonations;
-  var iframeHost = opts.iframeHost !== undefined ? opts.iframeHost : 'https://redalert.battleforthenet.com';
+  var iframeHost = opts.iframeHost !== undefined ? opts.iframeHost : 'https://june11.battleforthenet.com';
   var position = opts.position || null;
   var cowardlyRefuseToMaximize = !!opts.cowardlyRefuseToMaximize;
   var variant = opts.variant || null;
@@ -27,11 +27,12 @@
   var stylesToReset = {};
 
   function maximize() {
+    console.log('maximize')
     stylesToReset = {
       overflow: document.body.style.overflow
     };
 
-    document.getElementById(domId).classList.add('RAW--maximized');
+    document.getElementById(domId).classList.add('BFTN--maximized');
 
     setTimeout(function(){
       document.body.style.overflow = 'hidden';
@@ -60,7 +61,7 @@
     window.removeEventListener('message', receiveMessage);
 
     var el = document.getElementById(domId);
-    el.classList.add('RAW--closing')
+    el.classList.add('BFTN--closing')
     setTimeout(function(){
       el.parentNode.removeChild(el);
     }, animationDuration);
@@ -159,7 +160,8 @@
   }
 
   function receiveMessage(event) {
-    if (!event.data.RED_ALERT) return;
+    console.log(event)
+    if (!event.data.BFTN_WIDGET) return;
 
     switch (event.data.action) {
       case 'maximize':
@@ -195,10 +197,10 @@
         right = offset;
       }
 
-      injectCSS('RED_ALERT_CSS',
+      injectCSS('BFTN_WIDGET_CSS',
         '#' + domId + ' { position: fixed; right: ' + right + '; left: ' + left + '; bottom: ' + offset + '; width: ' + width + '; height: ' + height + '; z-index: 20000; -webkit-overflow-scrolling: touch; overflow: hidden; transition: all ' + animationDuration + 'ms ease-in; border-radius: ' + borderRadius + '; } ' +
-        '#' + domId + '.RAW--maximized { width: 100%; height: 100%; bottom: 0; ' + position + ': 0; border-radius: 0; } ' +
-        '#' + domId + '.RAW--closing { transform: scale(0); transform-origin: bottom right; opacity: 0; transition: transform ' + animationDuration + 'ms ease-in, opacity ' + animationDuration + 'ms ease-in; } ' +
+        '#' + domId + '.BFTN--maximized { width: 100%; height: 100%; bottom: 0; ' + position + ': 0; border-radius: 0; } ' +
+        '#' + domId + '.BFTN--closing { transform: scale(0); transform-origin: bottom right; opacity: 0; transition: transform ' + animationDuration + 'ms ease-in, opacity ' + animationDuration + 'ms ease-in; } ' +
         '#' + domId + ' iframe { width: 100%; height: 100%; }'
       );
 

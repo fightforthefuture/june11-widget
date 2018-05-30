@@ -127,7 +127,7 @@ function submitForm(event) {
 function postMessage(action, data) {
   data || (data = {})
   data.action = action
-  data.RED_ALERT = true
+  data.BFTN_WIDGET = true
   window.parent.postMessage(data, '*')
 }
 
@@ -321,7 +321,7 @@ function init() {
   document.body.setAttribute('data-language', language)
 
   if (isTruthy(query.ga) && !navigator.doNotTrack) {
-    initGoogleAnalytics(`redalert-widget-${variant}`)
+    initGoogleAnalytics(`june11-widget-${variant}`)
     addTrackingEvents()
   }
 

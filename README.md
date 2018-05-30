@@ -7,12 +7,12 @@ This is the source code for Battle for the Net's Red Alert for Net Neutrality wi
 Add this one line of JavaScript to any page, and you're good to go: ([**See the demo!**](https://www.fightforthefuture.org?redalert))
 
 ```html
-<script src="https://redalert.battleforthenet.com/widget.js" async></script>
+<script src="https://june11.battleforthenet.com/widget.js" async></script>
 ```
 
-You can change the positioning and do some customization via the `RED_ALERT_OPTIONS` [described below](#customization-options).
+You can change the positioning and do some customization via the `BFTN_WIDGET_OPTIONS` [described below](#customization-options).
 
-If you have any problems or questions regarding the widget, please [submit an issue](https://github.com/fightforthefuture/redalert-widget/issues).
+If you have any problems or questions regarding the widget, please [submit an issue](https://github.com/fightforthefuture/june11-widget/issues).
 
 
 ## How it works
@@ -27,19 +27,19 @@ Between May 9th and the vote (date TBD), the widget will display at a smaller si
 
 Starting at midnight, the night before the vote, the widget will expand again.  Try it out for yourself [right here](https://www.fightforthefuture.org?redalert).
 
-The widget is designed to appear once per user, per device, per day, but can be configured to display at a different interval. If you'd like to force it to show up on your page for testing, reload the page with `#ALWAYS_SHOW_RED_ALERT` at the end of the URL.
+The widget is designed to appear once per user, per device, per day, but can be configured to display at a different interval. If you'd like to force it to show up on your page for testing, reload the page with `#ALWAYS_SHOW_WIDGET` at the end of the URL.
 
-Please take a look at [**widget.js**](https://github.com/fightforthefuture/redalert-widget/blob/master/static/widget.js) if you want to see exactly what you're embedding on your page.
+Please take a look at [**widget.js**](https://github.com/fightforthefuture/june11-widget/blob/master/static/widget.js) if you want to see exactly what you're embedding on your page.
 
 The widget is compatible with Firefox, Chrome (desktop and mobile), Safari (desktop and mobile), Microsoft Edge, and Internet Explorer 11.
 
 ## Customization options
 
-If you define an object called `RED_ALERT_OPTIONS` before including the widget code, you can pass some properties in to customize the default behavior.
+If you define an object called `BFTN_WIDGET_OPTIONS` before including the widget code, you can pass some properties in to customize the default behavior.
 
 ```html
 <script type="text/javascript">
-  var RED_ALERT_OPTIONS = {
+  var BFTN_WIDGET_OPTIONS = {
     /**
      * Sets the position of the widget on the page. Can be 'left' or 'right'.
      * Defaults to 'right'.
@@ -97,5 +97,5 @@ If you define an object called `RED_ALERT_OPTIONS` before including the widget c
     alwaysMaximize: false // @type {boolean}
   };
 </script>
-<script src="https://redalert.battleforthenet.com/widget.js" async></script>
+<script src="https://june11.battleforthenet.com/widget.js" async></script>
 ```
