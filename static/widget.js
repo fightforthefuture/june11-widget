@@ -27,7 +27,6 @@
   var stylesToReset = {};
 
   function maximize() {
-    console.log('maximize')
     stylesToReset = {
       overflow: document.body.style.overflow
     };
@@ -160,7 +159,6 @@
   }
 
   function receiveMessage(event) {
-    console.log(event)
     if (!event.data.BFTN_WIDGET) return;
 
     switch (event.data.action) {
