@@ -127,6 +127,17 @@ h1 {
   margin: 0 0 1rem;
 }
 
+@include mobile {
+  h1 {
+    font-size: 3.2rem;
+  }
+
+  .logo {
+    width: 5rem;
+    height: auto;
+  }
+}
+
 h2 {
   font-size: 4rem;
   line-height: 1;

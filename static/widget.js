@@ -172,9 +172,20 @@
   function init() {
     if (alwaysShow || !getCookie(closedCookie)) {
       var left, right;
+      var width = '400px';
+      var height = '250px';
       var offset = '20px';
+      var borderRadius = '10px';
 
-      if (position === 'left') {
+      if (window.innerWidth < 500) {
+        offset = '0';
+        left = offset;
+        right = offset;
+        width = 'auto';
+        height = '200px';
+        borderRadius = '0';
+      }
+      else if (position === 'left') {
         left = offset;
         right = 'auto';
       }
@@ -185,7 +196,7 @@
       }
 
       injectCSS('RED_ALERT_CSS',
-        '#' + domId + ' { position: fixed; right: ' + right + '; left: ' + left + '; bottom: ' + offset + '; width: 400px; height: 250px; z-index: 20000; -webkit-overflow-scrolling: touch; overflow: hidden; transition: all ' + animationDuration + 'ms ease-in; border-radius: 10px; } ' +
+        '#' + domId + ' { position: fixed; right: ' + right + '; left: ' + left + '; bottom: ' + offset + '; width: ' + width + '; height: ' + height + '; z-index: 20000; -webkit-overflow-scrolling: touch; overflow: hidden; transition: all ' + animationDuration + 'ms ease-in; border-radius: ' + borderRadius + '; } ' +
         '#' + domId + '.RAW--maximized { width: 100%; height: 100%; bottom: 0; ' + position + ': 0; border-radius: 0; } ' +
         '#' + domId + '.RAW--closing { transform: scale(0); transform-origin: bottom right; opacity: 0; transition: transform ' + animationDuration + 'ms ease-in, opacity ' + animationDuration + 'ms ease-in; } ' +
         '#' + domId + ' iframe { width: 100%; height: 100%; }'
