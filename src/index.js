@@ -329,13 +329,11 @@ function init() {
   document.body.setAttribute('data-language', language)
 
   if (isTruthy(query.ga) && !navigator.doNotTrack) {
-    initGoogleAnalytics(`june11-widget-${variant}`)
+    initGoogleAnalytics(`june11-widget`)
     addTrackingEvents()
   }
 
-  const isDayOfAction = todayIs(2018, 5, 15) || todayIs(2018, 5, 16)
-
-  if (query.maximized || (isTruthy(query.dayofaction) && isDayOfAction)) {
+  if (query.maximized) {
     maximize()
   }
 
