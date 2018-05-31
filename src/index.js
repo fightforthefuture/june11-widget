@@ -149,6 +149,10 @@ function maximize(event) {
   setTimeout(() => {
     document.body.setAttribute('data-minimized', false)
     isMaximizing = false
+
+    if (!isProbablyMobile()) {
+      document.querySelector('[data-autofocus]').focus()
+    }
   }, 200)
 
   // geocodeIpAddress(geo => {
@@ -271,6 +275,10 @@ function onZipChange(event) {
   }, error => {
     updateCallPowerCampaignIds(null)
   })
+}
+
+function isProbablyMobile() {
+  return window.innerWidth <= 480
 }
 
 function init() {
