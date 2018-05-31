@@ -23,7 +23,7 @@ Add this widget to your site to display the following message at the bottom righ
 
 Clicking the message will open up this form, allowing visitors to send a letter to congress without leaving your site:
 
-![A screenshot of the minimized widget](https://www.battleforthenet.com/images/june11-widget-maximized.jpg?v=2)
+![A screenshot of the minimized widget](https://www.battleforthenet.com/images/june11-widget-maximized.jpg)
 
 The widget is designed to appear once per user, per device, per day, but can be configured to display at a different interval. If you'd like to force it to show up on your page for testing, reload the page with `#ALWAYS_SHOW_WIDGET` at the end of the URL.
 
