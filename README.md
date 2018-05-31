@@ -1,10 +1,10 @@
-# Red Alert for Net Neutrality Widget
+# June 11, 2018 Widget
 
-This is the source code for Battle for the Net's Red Alert for Net Neutrality widget. On May 9th, we're going to take back net neutrality. [Click here to learn more.](https://www.battleforthenet.com/redalert/)
+This is the source code for Battle for the Net's June 11 day of action widget. Net neutrality ends June 11th, but the fight has just begun. [Click here to learn more.](https://www.battleforthenet.com/)
 
 ## How to install the widget on your site
 
-Add this one line of JavaScript to any page, and you're good to go: ([**See the demo!**](https://www.fightforthefuture.org?redalert))
+Add this one line of JavaScript to any page, and you're good to go: ([**See the demo!**](https://www.fightforthefuture.org?widget=june11))
 
 ```html
 <script src="https://june11.battleforthenet.com/widget.js" async></script>
@@ -17,15 +17,13 @@ If you have any problems or questions regarding the widget, please [submit an is
 
 ## How it works
 
-On May 9th, the widget will cover your homepage with an unavoidable message that informs visitors about the impending vote and provides them with the opportunity to take action.
+Add this widget to your site to display the following message at the bottom right (or left) side of the screen:
 
-![A screenshot of our Red Alert modal](https://www.battleforthenet.com/images/redalert/modal-preview.jpg)
+![A screenshot of the minimized widget](https://www.battleforthenet.com/images/june11-widget-screenshot.jpg)
 
-Between May 9th and the vote (date TBD), the widget will display at a smaller size, continuing to drive calls and emails to lawmakers without distracting users from your site.
+Clicking the message will open up this form, allowing visitors to send a letter to congress without leaving your site:
 
-![A screenshot of our Red Alert modal when minimized](https://www.battleforthenet.com/images/redalert/modal-minimized-preview.jpg)
-
-Starting at midnight, the night before the vote, the widget will expand again.  Try it out for yourself [right here](https://www.fightforthefuture.org?redalert).
+![A screenshot of the minimized widget](https://www.battleforthenet.com/images/june11-widget-maximized.jpg)
 
 The widget is designed to appear once per user, per device, per day, but can be configured to display at a different interval. If you'd like to force it to show up on your page for testing, reload the page with `#ALWAYS_SHOW_WIDGET` at the end of the URL.
 
@@ -52,12 +50,6 @@ If you define an object called `BFTN_WIDGET_OPTIONS` before including the widget
      * viewer's browser.
      */
     language: null, // @type {string}
-
-    /**
-     * Set this to true to disable loading the full screen widget by default on
-     * May 9th. Defaults to false.
-     */
-    cowardlyRefuseToMaximize: false, // @type {boolean}
 
     /*
      * Choose from 'fp' for Free Press, 'dp' for Demand Progress or
