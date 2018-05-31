@@ -198,7 +198,7 @@
       injectCSS('BFTN_WIDGET_CSS',
         '#' + domId + ' { position: fixed; right: ' + right + '; left: ' + left + '; bottom: ' + offset + '; width: ' + width + '; height: ' + height + '; z-index: 20000; -webkit-overflow-scrolling: touch; overflow: hidden; transition: all ' + animationDuration + 'ms ease-in; border-radius: ' + borderRadius + '; } ' +
         '#' + domId + '.BFTN--maximized { width: 100%; height: 100%; bottom: 0; ' + position + ': 0; border-radius: 0; } ' +
-        '#' + domId + '.BFTN--closing { transform: scale(0); transform-origin: bottom right; opacity: 0; transition: transform ' + animationDuration + 'ms ease-in, opacity ' + animationDuration + 'ms ease-in; } ' +
+        '#' + domId + '.BFTN--closing { transform: scale(0); transform-origin: bottom ' + position + '; opacity: 0; transition: transform ' + animationDuration + 'ms ease-in, opacity ' + animationDuration + 'ms ease-in; } ' +
         '#' + domId + ' iframe { width: 100%; height: 100%; }'
       );
 
